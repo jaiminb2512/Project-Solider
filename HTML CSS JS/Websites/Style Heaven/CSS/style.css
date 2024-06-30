@@ -1,0 +1,265 @@
+:root {
+    --primary-color: #d4d4df;
+    --nav-bgColor: #e7e6e6;
+    --nav-link: #718096;
+    --heading-color: rgb(139, 157, 185);
+    --hover-color: #b7b8c2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background-color: var(--nav-bgColor)
+}
+
+.header-content {
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    gap: 2px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: var(--nav-link);
+    font-size: 20px;
+    font-weight: 600;
+    transform: color 0.1s;
+}
+
+.nav-link:hover {
+    color: var(--hover-color);
+}
+
+.contact-button {
+    display: block;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transform: all 0.1s;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-button:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+.container {
+    background-color: rgb(216, 214, 214);
+    text-align: center;
+    height: 595px;
+}
+
+.container-heading {
+    padding: 20px 0 0 0;
+}
+
+.c-heading-1,.c-heading-2 {
+    animation: slideFromLeft 2s ease-in-out forwards;
+    color: var(--heading-color)
+}
+
+.box-container {
+    gap: 5px;
+    padding-top: 50px;
+}
+
+.left-box,
+.right-box {
+    width: 500px;
+    height: 500px;
+}
+
+.left-box {
+    animation: slideFromLeft 1s ease forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    color: white;
+}
+
+@keyframes slideFromLeft {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.left-box-heading{
+    margin: 0 0 22px 0;
+    border: 2px solid white;
+}
+
+.right-box {
+    margin: 0 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    animation: visibleFunc 1s ease forwards;
+    background-color: white;    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+@keyframes visibleFunc {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 40%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+.main-img {
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+}
+
+/* .small-img{
+    width: 100px;
+    height: 100px;
+}
+.big-img{
+    width: 200px;
+    height: 200px;
+} */
+
+.shoes-img {
+    display: inline;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.btns {
+    margin-top: 10px;
+}
+
+.buttons {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(216, 214, 214);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-h2 {
+    text-align: center;
+}
+
+.contact-form-group {
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-input[type="text"],
+.contact-input[type="email"],
+.contact-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-textarea {
+    height: 150px;
+}
+
+.contact-input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-input[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/utiliy.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Style Haven</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="header">
+            <header class="header-content">
+                <a href="/index.html" class="logo">
+                    <img src="Img/logo.jpg" alt="logoImage" class="logo-icon" />
+                    <span class="logo-text">Style Haven</span>
+                </a>
+
+                <nav class="nav">
+                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="/html/cap.html" class="nav-link">Cap</a>
+                    <a href="/html/shirt.html" class="nav-link">Shirt</a>
+                    <a href="/html/pant.html" class="nav-link">Pant</a>
+                    <a href="/html/Shoes.html" class="nav-link">Shoes</a>
+                </nav>
+
+                <button class="contact-button">Contact us</button>
+            </header>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box-container flex ">
+            <div class="left-box">
+                <h1 class="left-box-heading">Welcome to Style Haven!</h1>
+                <p>Explore our latest collection of </p>
+                <p>fashionable clothing and accessories.</p>
+            </div>
+
+            <div class="right-box flex">
+
+                <div class="left-card">
+                    <a href="html/cap.html" onclick="generateCard('cap')"> <img class="main-img small-img"
+                            src="Img/Caps/cap1.jpg" alt="Cap"></a>
+                    <a href="html/shirt.html" onclick="generateCard('shirt')"> <img class="main-img big-img"
+                            src="Img/Shirt/shirt0.jpg" alt="Shirt"></a>
+                </div>
+
+
+                <div class="right-card">
+                    <a href="html/pant.html" onclick="generateCard('pant')"> <img class="main-img big-img"
+                            src="Img/Pant/pant0.jpg" alt="Pant"></a>
+                    <div class="shoes-img">
+
+                            <a href="html/shoes.html" onclick="generateCard('shoes')"> <img
+                                    class="main-img small-img shoes-img" src="Img/Shoes/shoes0.jpg" alt="Shoes"></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

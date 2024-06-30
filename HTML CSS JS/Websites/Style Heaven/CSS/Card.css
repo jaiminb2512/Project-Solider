@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #d4d4df;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --gray: #808080;
+    --dark-gray: #555;
+    --nav-bgColor: #e7e6e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background-color: var(--nav-bgColor)
+}
+
+.header-content {
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    gap: 2px;
+}
+
+.logo-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: #718096;
+    font-size: 20px;
+    font-weight: 600;
+    transform: color 0.1s;
+}
+
+.nav-link:hover {
+    color: var(--link-color);
+}
+
+.contact-button {
+    display: none;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transform: all 0.1s;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media screen and (min-width:768px) {
+    .contact-button {
+        display: block;
+    }
+}
+
+.container {
+    padding: 20px 50px;    
+    background-color: rgb(216, 214, 214);
+}
+
+.main-box {
+    text-align: center;
+}
+
+.card-container {
+    margin: 8px;
+    display: flex;
+    padding-bottom: 4px;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.card {
+    border: 2px solid rgb(121, 119, 119);
+    background-color: rgb(236, 231, 231);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.card-box{
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.prev-btn{
+    float: left;
+}
+
+.card-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 15px;
+    border-radius: 5px;
+}
+
+.description {
+    padding: 2px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.buttons {
+    margin: 2px 0;
+    padding: 3px 7px;
+    background-color: #578cd6;
+    border: 0.5px solid 0B5ED6;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/utiliy.css">
+    <link rel="stylesheet" href="../CSS/Card.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+     <title>Style Haven</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="header">
+            <header class="header-content">
+                <a href="/index.html" class="logo">
+                    <img src="../Img/logo.jpg" alt="logoImage" class="logo-icon" />
+                    <span class="logo-text">Style Haven</span>
+                </a>
+
+                <nav class="nav">
+                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="/html/cap.html" class="nav-link">Cap</a>
+                    <a href="/html/shirt.html" class="nav-link">Shirt</a>
+                    <a href="/html/pant.html" class="nav-link">Pant</a>
+                    <a href="/html/Shoes.html" class="nav-link">Shoes</a>
+                </nav>
+
+                <button class="contact-button">Contact us</button>
+            </header>
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <h2 class="contact-h2">Contact Us</h2>
+        <form id="contact-form">
+            <div class="contact-form-group">
+                <label for="contact-name" class="contact-label">Name:</label>
+                <input type="text" id="contact-name" name="name" class="contact-input" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-email" class="contact-label">Email:</label>
+                <input type="email" id="contact-email" name="email" class="contact-input" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-message" class="contact-label">Message:</label>
+                <textarea id="contact-message" name="message" class="contact-textarea" required></textarea>
+            </div>
+            <div class="contact-form-group submit-btn" style="display: flex; justify-content: center;">
+                <input type="submit" value="Submit" class="contact-input">
+            </div>
+        </form>
+        <script src="JS/index.js"></script>
+</body>
+
+</html>
