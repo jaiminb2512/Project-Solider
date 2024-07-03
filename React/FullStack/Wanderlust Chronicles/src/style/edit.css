@@ -1,0 +1,104 @@
+@import url('./style.css');
+
+body, 
+html { 
+    overflow-x: hidden; 
+} 
+
+.edit { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 50px;
+} 
+
+.editContainer { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 80%; 
+    margin: 50px; 
+    padding: 20px; 
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+} 
+
+.editContainer h1 { 
+    color: var(--blue); 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    font-weight: bold; 
+    text-align: center;
+} 
+
+.editForm { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+} 
+
+.editForm label { 
+    font-size: 1.2rem; 
+    color: var(--dark); 
+    margin-top: 10px; 
+} 
+
+.editForm input, 
+.editForm textarea { 
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #ddd; 
+    font-size: 1rem; 
+} 
+
+.editForm textarea { 
+    height: 150px; 
+    resize: vertical; 
+} 
+
+.editForm button { 
+    width: 150px; 
+    height: 40px; 
+    border: none; 
+    margin-top: 20px; 
+    background: var(--purple); 
+    border-radius: 25px; 
+    font-size: 1rem; 
+    color: white; 
+    font-weight: 700; 
+    cursor: pointer; 
+    outline: none; 
+    align-self: center;
+} 
+
+.editPhotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.editPhotos img {
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 800px) { 
+    .editContainer { 
+        width: 95%; 
+    } 
+
+    .editContainer h1 { 
+        font-size: 2rem; 
+    } 
+
+    .editForm label { 
+        font-size: 1rem; 
+    } 
+}
