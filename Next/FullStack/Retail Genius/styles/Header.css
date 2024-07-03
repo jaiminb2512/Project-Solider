@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    align-items: center;
+}
+
+.cart-num {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 50px;
+}
+
+
+.title{
+    height: 30px;
+    cursor: pointer;
+}
