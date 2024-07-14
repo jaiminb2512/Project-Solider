@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainstorming</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --theme-color: #f1f2f6;
+            --header-primary-color: #b0b3b8;
+            --gamebody-color: #f7f9fc;
+            --gameArea-color: #ffffff;
+            --gameArea-border-color: black;
+            --input-background: #f1f2f6;
+            --button-text-color: white;
+            --button-background: #576574;
+            --button-dark-background: #898d91;
+            --text-shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            height: 100vh;
+            background-color: var(--theme-color);
+        }
+
+        h1 {
+            color: var(--header-primary-color);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 4rem;
+        }
+
+        span {
+            color: var(--gameArea-border-color);
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        #card-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+        }
+
+        .card {
+            position: relative;
+            transition: all .4s linear;
+            transform-style: preserve-3d;
+        }
+
+        .card,
+        .back-card,
+        .front-card {
+            height: 7rem;
+            width: 7rem;
+        }
+
+        .back-card,
+        .front-card {
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .front-card {
+            background: var(--gameArea-color);
+            border: 1px solid var(--gameArea-border-color);
+            border-radius: .6rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 1.5rem;
+        }
+
+        .back-card {
+            transform: rotateY(180deg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 2rem;
+        }
+
+        .card_selected {
+            transform: rotateY(180deg);
+        }
+
+        .card-match .front-card,
+        .card-match .back-card {
+            background-color: black;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #score {
+            width: 100%;
+            height: 50px;
+            border: 2px solid var(--button-background);
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #play-again {
+            background-color: var(--button-background);
+            color: var(--button-text-color);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px;
+        }
+
+        #play-again:hover {
+            background-color: var(--button-dark-background);
+            /* darken(var(--button-background), 0%) */
+            color: black;
+        }
+
+        @media screen and (max-width: 800px) {
+            .container {
+                margin-left: -150px;
+                flex-direction: column;
+            }
+
+            .card {
+                height: 2rem;
+                width: 2rem;
+            }
+
+            #card-section {
+                width: 150px;
+                grid-gap: 25px;
+            }
+
+            .front-card {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            .back-card {
+                height: 25px;
+                width: 25px;
+            }
+
+            #score {
+                width: 100px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+
+
+        @media screen and (max-width: 500px) {
+
+            .card,
+            .back-card,
+            .front-card {
+                height: 50px;
+                width: 50px;
+            }
+
+            #score {
+                font-size: 0.75rem;
+            }
+
+            #play-again {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Match the <span>Images</span></h1>
+    <div class="container">
+        <section id="card-section"></section>
+        <div class="controls">
+            <div id="score">Score: 0</div>
+            <button id="play-again">Play Again</button>
+        </div>
+    </div>
+    <script>
+        const cardsArray = [
+            { 'name': 'CSS', 'img': './Img/css.jpg' },
+            { 'name': 'HTML', 'img': './Img/html.jpg' },
+            { 'name': 'jQuery', 'img': './Img/jquery.jpg' },
+            { 'name': 'JS', 'img': './Img/js.jpg' },
+            { 'name': 'Node', 'img': './Img/node.jpg' },
+            { 'name': 'Python', 'img': './Img/python.jpg' }
+        ];
+
+        const parentDiv = document.querySelector('#card-section');
+        const playAgainBtn = document.querySelector('#play-again');
+        const scoreDiv = document.querySelector('#score');
+
+        let gameCard = [];
+        let clickCount = 0;
+        let totalClicks = 0;
+        let firstCard = "";
+        let secondCard = "";
+        let pairsMatched = 0;
+
+        function shuffleCards() {
+            gameCard = cardsArray.concat(cardsArray).sort(() => 0.5 - Math.random());
+        }
+
+        function createBoard() {
+            parentDiv.innerHTML = "";
+            shuffleCards();
+
+            gameCard.forEach(card => {
+                const childDiv = document.createElement('div');
+                childDiv.classList.add('card');
+                childDiv.dataset.name = card.name;
+
+                const front_div = document.createElement('div');
+                front_div.classList.add('front-card');
+
+                const back_div = document.createElement('div');
+                back_div.classList.add('back-card');
+                back_div.style.backgroundImage = `url(${card.img})`;
+
+                childDiv.appendChild(front_div);
+                childDiv.appendChild(back_div);
+                parentDiv.appendChild(childDiv);
+            });
+        }
+
+        function cardMatches() {
+            document.querySelectorAll('.card_selected').forEach(card => {
+                card.classList.add('card-match');
+                card.classList.remove('card_selected');
+            });
+            pairsMatched++;
+            updateScore();
+            checkGameOver();
+        }
+
+        function resetGame() {
+            clickCount = 0;
+            firstCard = "";
+            secondCard = "";
+            document.querySelectorAll('.card_selected').forEach(card => {
+                card.classList.remove('card_selected');
+            });
+        }
+
+        function updateScore() {
+            let score = (pairsMatched / totalClicks) * 100;
+            scoreDiv.textContent = `Score: ${score.toFixed(2)}`;
+        }
+
+        function checkGameOver() {
+            if (pairsMatched === cardsArray.length) {
+                setTimeout(() => {
+                    alert(`Game Over! Your final score is ${scoreDiv.textContent}`);
+                    playAgainBtn.style.display = 'block';
+                }, 500);
+            }
+        }
+
+        parentDiv.addEventListener("click", (e) => {
+            if (e.target.classList.contains('front-card')) {
+                let curCard = e.target.parentNode;
+                if (!curCard.classList.contains('card_selected') && !curCard.classList.contains('card-match')) {
+                    clickCount++;
+                    totalClicks++;
+                    if (clickCount === 1) {
+                        firstCard = curCard.dataset.name;
+                        curCard.classList.add('card_selected');
+                    } else if (clickCount === 2) {
+                        secondCard = curCard.dataset.name;
+                        curCard.classList.add('card_selected');
+
+                        if (firstCard === secondCard) {
+                            setTimeout(() => {
+                                cardMatches();
+                                resetGame();
+                            }, 500);
+                        } else {
+                            setTimeout(() => {
+                                resetGame();
+                            }, 500);
+                        }
+                        clickCount = 0;
+                    }
+                }
+            }
+        });
+
+        playAgainBtn.addEventListener('click', () => {
+            pairsMatched = 0;
+            totalClicks = 0;
+            scoreDiv.textContent = `Score: 0%`;
+            createBoard();
+        });
+
+        createBoard();
+    </script>
+
+</body>
+
+</html>
