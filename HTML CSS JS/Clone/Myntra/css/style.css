@@ -1,0 +1,289 @@
+:root {
+    --bottom-color: #FAFBFC;
+    --men-bottom-color: #ee5f73;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-box {
+    padding: 8px 8px 2px 8px;
+    z-index: 10;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+}
+
+.navbar {
+    margin: 20px 0 15px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-1 {
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.logo {
+    width: 50px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.links {
+    justify-content: center;
+    align-items: center;
+}
+
+.link-list {
+    list-style: none;
+    gap: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    color: rgb(40, 44, 63);
+}
+
+.nav-bg-color {
+    background-color: var(--bottom-color);
+}
+
+.men {
+    padding: 11px 5px;
+    border-bottom: 3px solid var(--men-bottom-color);
+}
+
+.search-text {
+    width: 400px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 24px;
+    color: #696e79;
+    padding: 8px 10px 10px;
+    border: 1px solid #f5f5f6;
+    border-radius: 4px;
+    background: #f5f5f6;
+}
+
+.men-menu {
+    left: 125px;
+    position: absolute;
+    background-color: #fff;
+    padding: 0 25px 25px 15px;
+    width: 80%;
+    height: 450px;   
+    display: grid;
+    grid-template-columns: 220px 220px 220px 220px 220px; 
+}
+
+.heading {
+    margin-bottom: 7px;
+    color: var(--men-bottom-color);
+}
+
+.heading-only {
+    padding: 0 0 0 25px;
+}
+
+.child {
+    height: 100%;
+    width: 100%;
+}
+
+.iteam-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0 0 25px;
+}
+
+.line {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0 10px 0;
+    width: 80%;
+}
+
+.block-2,
+.search-text {
+    margin: 0 50px 0 50px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.svgs {
+    gap: 20px;
+}
+
+.img-1 {
+    margin-top: 25px;
+}
+
+.style {
+    margin: 10px 0 0 0;
+}
+
+.style img {
+    width: 674px;
+}
+
+.main-img{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.discount-img {
+    width: 50%;
+}
+
+
+.crazy-img {
+    height: 150px;
+    width: 100%;
+
+}
+
+.items {
+    display: flex;
+    margin: 0 0 25px 0;
+    cursor: pointer;
+}
+
+.items-row-1 {
+    width: 99.50%;
+    height: 400px;
+    display: flex;
+    position: relative;
+}
+
+.items-row-2 {
+    display: none;
+    width: 0; 
+    height: 400px;
+    display: flex;
+    position: relative;
+}
+
+.iteams-img {
+    width: 16.73%;
+    height: 400px;
+    position: relative;
+}
+
+.iteams-img-row-2 {
+    width: 19.95%;
+    height: 400px;
+    margin: 0 -2px;
+}
+
+.round {
+    border: 4px solid rgba(51, 51, 51, 0.8);
+    border-radius: 4px;
+    width: 1px;
+    margin: 0 5px 15px 0;
+    cursor: pointer;
+}
+
+.shop-by-category-img {
+    width: 100%;
+}
+
+.shop {
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.shop-img {
+    margin-right: -3px;
+    width: 225px;
+    height: 350px;
+}
+
+.shop-bottom-img {
+    width: 300px;
+    height: 35 0px;
+}
+
+.offer-waiting-img {
+    width: 100%;
+}
+
+.bottom-text {
+    height: auto;
+    background-color: var(--bottom-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2.5fr;
+    padding: 25px;
+    color: rgb(40, 44, 63);
+    font-size: 14px;
+    padding: 50px 0 0 75px;
+}
+
+.bottom-block {
+    height: 100%;
+}
+
+.bottom-list-heading {
+    margin: 20px 0;
+    color: #282c3f;
+    font-weight: bold;
+}
+
+.bottom-list-iteam {
+    color: rgb(105, 107, 121);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.bottom-list-iteam li {
+    padding: 2.5px;
+}
+
+.bottom-img-container {
+    display: flex;
+    gap: 20px;
+}
+
+.bottom-img {
+    height: 42px;
+}
+
+.social-img {
+    height: 22px;
+    width: 20px;
+    margin: 0 13px 0 0;
+}
+
+.original {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 53%;
+    justify-self: center;
+    margin: 23px 0 20px 0;
+}
+
+.exchange {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-self: center;
+    margin: 23px 0 20px 0;
+}
+
+.bottom-big-img {
+    width: 48px;
+    height: 40px;
+}
+
+.bold-text {
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red {
+    color: red;
+}
+
+.list-style {
+    list-style: none;
+}
+
+.border {
+    border: 2px solid black;
+}
+
+.img-width {
+    width: 1250px;
+}

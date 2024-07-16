@@ -1,0 +1,1 @@
+Make Images folder and put all the images
