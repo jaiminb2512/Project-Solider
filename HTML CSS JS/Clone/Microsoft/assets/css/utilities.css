@@ -1,0 +1,77 @@
+.container {
+    max-width: 1700px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0px 40px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.grid { display: grid; }
+
+.grid-4 {
+    grid-template-columns:repeat(4, 1fr);
+    column-gap: 25px;
+}
+
+.black-btn {
+    width: 175px;
+    padding: 10px 15px;
+    color: var(--white-color);
+    background: #000;
+}
+
+.black-btn span { transition: margin 0.2s ease-in; }
+
+.black-btn span:hover {
+    text-decoration: underline;
+    margin: 0 10px 0 -3px;
+}
+
+.trans-btn span { transition: margin 0.2s ease-in; }
+
+.trans-btn span:hover {
+    margin: 0 10px 0 -5px;
+    border-bottom: 2.5px solid #000;
+}
+
+.blue-btn {
+    color: #0067b8;
+    transition: margin-right 0.2s ease-in;
+    margin-right: 5px;
+}
+
+.blue-btn:hover {
+    margin-right: 10px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #0067b8;
+}
+
+.sm { font-size: 1rem;}
+.md{ font-size: 2rem;}
+.lg { font-size: 3rem;}
+.xl { font-size: 4rem;}
+
+.m-1 { margin: 1rem;}
+.m-2 { margin: 2rem;}
+.m-3 { margin: 3rem;}
+.m-4 { margin: 4rem;}
+
+.my-1 { margin: 1rem 0;}
+.my-2 { margin: 2rem 0;}
+.my-3 { margin: 3rem 0;}
+.my-4 { margin: 4rem 0;}
+
+.p-1 { padding: 1rem;}
+.p-2 { padding: 2rem;}
+.p-3 { padding: 3rem;}
+.p-4 { padding: 4rem;}
+
+.py-1 { padding: 1rem 0;}
+.py-2 { padding: 2rem 0;}
+.py-3 { padding: 3rem 0;}
+.py-4 { padding: 4rem 0;}
