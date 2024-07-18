@@ -1,0 +1,17 @@
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+  color: #f8f9fa; 
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: #343a40;
+}
+
+.bg-light {
+  background-color: #f8f9fa; 
+}
+
+.bg-dark {
+  background-color: #343a40; 
+}
