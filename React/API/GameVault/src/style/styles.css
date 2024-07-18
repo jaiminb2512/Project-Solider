@@ -1,0 +1,58 @@
+/* styles.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Hide main page scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+}
+
+.custom-scrollbar.dark::-webkit-scrollbar-thumb {
+  background-color: #2d3748; /* Dark theme color */
+}
+
+.custom-scrollbar.light::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0; /* Light theme color */
+}
+
+/* Define the default scrollbar thumb color */
+:root {
+  --scrollbar-thumb-color: #cbd5e0; /* Light theme color */
+}
+
+/* Override the scrollbar thumb color for dark theme */
+.dark {
+  --scrollbar-thumb-color: #2d3748; /* Dark theme color */
+}
+
+
+
+/* Default slick arrow styles */
+.slick-prev, .slick-next {
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+
+.slick-prev::before, .slick-next::before {
+  font-size: 30px;
+  color: white;
+}
+
+/* Light theme slick arrow styles */
+.light .slick-prev::before, .light .slick-next::before {
+  color: black; 
+}
+
+/* Dark theme slick arrow styles */
+.dark .slick-prev::before, .dark .slick-next::before {
+  color: white; 
+}
