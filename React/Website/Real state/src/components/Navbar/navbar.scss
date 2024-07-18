@@ -1,0 +1,137 @@
+@import "../../responsive.scss";
+
+nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        transition: all 0.4s ease;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        gap: 25px;
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 23px;
+            }
+
+            span {
+                @include md {
+                    display: none;
+                }
+
+                @include sm {
+                    display: initial;
+                }
+            }
+
+        }
+    }
+
+    .right {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fcf5f3;
+        height: 100%;
+
+        a {
+            padding: 8px 16px;
+            margin: 20px;
+        }
+
+        .user{
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+
+            img{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 20px;
+            }
+
+            .profile{
+                padding: 12px 24px;
+                background-color: #fece51;
+                cursor: pointer;
+                border: none;
+                position: relative;
+
+                .notification{
+                    position: absolute;
+                    background-color: red;
+                    color: white;
+                    border-radius: 50%;
+                    top: -8px;
+                    right: -8px;
+                    width: 26px;
+                    height: 26px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .register {
+            background-color: #fece51;
+        }
+
+        .menuIcon {
+            display: none;
+            z-index: 100;
+
+            img {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+
+
+            @include sm {
+                display: inline;
+            }
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            transition: all 0.3s ease;
+            margin: 0 -50px 0 0;
+            display: none;
+            background-color: black;
+            color: white;
+            height: 100vh;
+            width: 60%;
+            visibility: 0;            
+        }
+
+        .menu.open {
+            visibility: 1;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  
+    // Custom scrollbar styles
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+  
