@@ -1,0 +1,11 @@
+{
+    "dialect": "postgresql", 
+    "dbCredentials": {
+        "url": "postgresql://FreeVoice_owner:dELh8ismGxj1@ep-shiny-field-a5rw2700.us-east-2.aws.neon.tech/FreeVoice?sslmode=require"
+    },
+    "migration": {
+        "table": "migrations",
+        "schema": "public"
+    },
+    "schema": "./utils/schema.js"
+}

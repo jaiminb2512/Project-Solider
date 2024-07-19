@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+@layer components {
+  .mycontainer {
+    @apply container px-40 py-16 mx-auto ;
+  }
+}
+
+
+.home {
+	text-align: center;
+}
+
+.title{
+	margin-top: 15px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.workout-plans-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: c;
+	gap: 20px;
+	max-width: 1300px;
+	margin-bottom: 50px;
+}
+
+.workout-plan-card {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 10px;
+	width: 350px;
+	background-color: #f9f9f9;
+}
+
+.workout-plan-card h2 {
+	margin-top: 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.workout-plan-card p {
+	margin-bottom: 10px;
+}
+
+.workout-image {
+	width: auto;
+	height: 200px;
+
+}
+
+.start-button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin-top: 10px;
+}
+
+.start-button:hover {
+	background-color: #45a049;
+}
+
+
+.nav-container{
+	background-color: #333;
+	color: white;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.user-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+.workout-plan {
+	text-align: center;
+	padding: 20px;
+}
+
+.workout-plan-title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.img-content-workout{
+	display: flex;
+}
+
+.workout-image-container{
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.workout-image {
+	height: 300px;
+}
+
+.content-workout{
+	padding: 0 30px 0 0;
+	width: 50%;
+}
+
+.workout-desc{
+	margin-bottom: 20px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.workout-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.workout-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #f0f0f0;
+}
+
+.workout-item.selected {
+	background-color: lightgreen;
+}
+
+.workout-item input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+.workout-item label {
+	font-size: 16px;
+}
+
+.workout-completed{
+	font-size: 35px;
+	margin-top: 25px;
+	font-weight: bolder;
+}
