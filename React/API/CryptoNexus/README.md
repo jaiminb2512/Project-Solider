@@ -1,4 +1,4 @@
-# Cryptoverse
+# CryptoNexus
 
 A website that show all the details related to cryptocurrencies.
 
