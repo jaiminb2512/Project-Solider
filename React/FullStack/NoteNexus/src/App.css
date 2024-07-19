@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.navbar {
+  background-color: #333;
+  height: 50px;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 2rem;
+}
+
+
+* {
+  scrollbar-width: 0.5px;
+  scrollbar-color:  #f9f9f9;
+}
+
+*::-webkit-scrollbar {
+  width: 1px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f9f9f9; 
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #333; 
+  border-radius: 10px; 
+}

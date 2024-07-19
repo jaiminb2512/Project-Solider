@@ -1,0 +1,41 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #f8f9fa;
+	border-bottom: 2px solid #e9ecef;
+}
+
+.header-title {
+	font-size: 2em;
+	font-weight: bold;
+	color: #343a40;
+}
+
+.header-total-price {
+	font-size: 1.5em;
+	color: green;
+}
+
+.header-cart {
+	display: flex;
+	align-items: center;
+}
+
+.header-cart-items {
+	font-size: 1.2em;
+	margin-right: 10px;
+	color: #343a40;
+}
+
+.cart-icon {
+	color: #343a40;
+	font-size: 30px !important;
+}
+
+@media screen and (max-width : 600px) { 
+	.header{
+		flex-direction: column;
+	}
+}

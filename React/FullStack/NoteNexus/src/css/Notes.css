@@ -1,0 +1,54 @@
+.notes {
+  padding: 2rem;
+}
+
+.login-register{
+  display: flex;
+  gap: 5px;
+}
+
+.components{
+  width: 45%;
+}
+
+.line{
+  width: 1px;
+  background-color: black;
+  color: wheat;  
+} 
+
+.text{
+  text-align: center;
+  font-size: 20px;
+}
+
+.text p{
+  margin: 5px 0px;
+}
+
+.note-container{
+  display: flex;
+  gap: 15px;  
+}
+
+.notes .note {
+  justify-content: space-around;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.notes h3 {
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.notes p {
+  margin: 0;
+  color: #666;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+}
