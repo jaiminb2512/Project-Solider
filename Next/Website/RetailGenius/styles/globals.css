@@ -1,0 +1,233 @@
+/* styles/globals.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.AddProductContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.AddProductForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.search-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 1em;
+    width: 200px;
+}
+
+.search-input[type="number"] {
+    width: 100px;
+}
+
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.productItem {
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.productItem:hover {
+    transform: scale(1.05);
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.addedToCart {
+    background-color: green;
+    color: white;
+}
+
+.productName {
+    font-size: 1.5em;
+    margin: 12px 0;
+}
+
+.productDescription {
+    font-size: 1em;
+    color: #666;
+    margin: 12px 0;
+}
+
+.productPrice,
+.productStock {
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.pf-title {
+    text-align: center;
+}
+
+.pf-AddProductForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pf-AddProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.pf-input,
+.pf-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.pf-textarea {
+    height: 50px;
+    width: 95%;
+}
+
+.pf-button,
+.pf-removeButton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.pf-button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.pf-button:hover,
+.pf-removeButton:hover {
+    background-color: rgb(1, 1, 12);
+}
+
+.pf-imagePreview {
+    margin-top: 15px;
+}
+
+.pf-imagePreview img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
+.pf-box1,
+.pf-box2 {
+    display: flex;
+    gap: 5px;
+}
+
+.pf-box1 input,
+.pf-box2 input {
+    width: 50%;
+    margin-left: 5px;
+}
+
+.pf-imgcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pf-imgcontainer label input {
+    width: 50%;
+}
+
+.pf-imagePreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
