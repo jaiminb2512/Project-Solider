@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Using JS</title>
+
+    <style>
+        :root {
+            --theme-color: #f1f2f6;
+            --header-color: #dfe4ea;
+            --gamebody-color: #f7f9fc;
+            --gameArea-color: #ffffff;
+            --gameArea-border-color: black;
+            --input-background: #f1f2f6;
+            --button-text-color: white;
+            --button-background: #576574;
+            --button-hover-background: #aebed1;
+            --text-shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--theme-color);
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .quiz-section {
+            background-color: var(--gamebody-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .quiz,
+        .details {
+            background-color: var(--gameArea-color);
+            border: 1px solid var(--gameArea-border-color);
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 10px var(--text-shadow-color);
+            max-width: 400px;
+            width: 100%;
+            gap: 50px;
+        }
+
+        .question {
+            background-color: var(--header-color);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            outline: 0.2px solid var(--button-hover-background);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            outline: 0.2px solid var(--button-hover-background);
+            border-radius: 10px;
+            padding: 15px 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .btn {
+            text-align: center;
+        }
+
+        button,
+        .play_again {
+            background-color: var(--button-background);
+            color: var(--button-text-color);
+            border: none;
+            text-align: center;
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        .play_again:hover {
+            background-color: var(--header-color);
+            outline: 0.2px solid var(--button-hover-background);
+            color: black;
+        }
+
+
+        .details {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .data {
+            outline: 0.2px solid var(--button-hover-background);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .quiz-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="heading">Dynamic Quiz using JS</h1>
+    <div class="quiz-section">
+        <div class="quiz">
+            <h2 class="question" id="question">quiz question</h2>
+            <hr>
+            <ul>
+                <li>
+                    <input type="radio" class="answer" id="a" name="quizOption">
+                    <label for="a" id="option_1"> quiz option 1</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="b" name="quizOption">
+                    <label for="b" id="option_2"> quiz option 2</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="c" name="quizOption">
+                    <label for="c" id="option_3"> quiz option 3</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="d" name="quizOption">
+                    <label for="d" id="option_4"> quiz option 4</label>
+                </li>
+            </ul>
+            <hr>
+            <div class="btn">
+                <button type="button" id="submit" onclick="checkAns()">Submit</button>
+            </div>
+        </div>
+        <div class="details">
+            <div class="curr_level data"><span id="level"> 0 </span></div>
+            <div class="curr_score data">Score : <span id="score"> 0 </span> %</div>
+            <div class="play_again data" id="play_again_btn" onclick="playAgain()">Play again</div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "What does HTML stand for?",
+                options: [
+                    "Hypertext Markup Language",
+                    "Hyper Transfer Markup Language",
+                    "Hypertext Machine Language",
+                    "Hyperlink and Text Markup Language",
+                ],
+                correct: 0,
+            },
+            {
+                question: "What does CSS stand for?",
+                options: [
+                    "Computer Style Sheets",
+                    "Creative Style Sheets",
+                    "Cascading Style Sheets",
+                    "Colorful Style Sheets",
+                ],
+                correct: 2,
+            },
+            {
+                question: "What is the correct syntax for referring to an external script called 'script.js'?",
+                options: [
+                    "<script href='script.js'>",
+                        "<script src='script.js'>",
+                    "<script ref='script.js'>",
+                    "<script name='script.js'>",
+                ],
+                correct: 2,
+            },
+            {
+                question: "Which HTML attribute is used to define inline styles?",
+                options: [
+                    "class",
+                    "style",
+                    "font",
+                    "styles",
+                ],
+                correct: 2,
+            },
+            {
+                question: "Which is the correct CSS syntax?",
+                options: [
+                    "{body: color=black;}",
+                    "body {color: black;}",
+                    "body: color=black;",
+                    "{body; color: black;}",
+                ],
+                correct: 1,
+            },
+            {
+                question: "How do you insert a comment in a CSS file?",
+                options: [
+                    "/* this is a comment */",
+                    "// this is a comment",
+                    "' this is a comment",
+                    "<!-- this is a comment -->",
+                ],
+                correct: 0,
+            },
+            {
+                question: "Which property is used to change the background color?",
+                options: [
+                    "background-color",
+                    "color",
+                    "bgcolor",
+                    "background",
+                ],
+                correct: 0,
+            },
+            {
+                question: "How do you add a background color for all <h1> elements?",
+                options: [
+                    "all.h1 {background-color: #FFFFFF;}",
+                    "h1.all {background-color: #FFFFFF;}",
+                    "h1 {background-color: #FFFFFF;}",
+                    "h1 {bg-color: #FFFFFF;}",
+                ],
+                correct: 2,
+            },
+            {
+                question: "Which CSS property is used to change the text color of an element?",
+                options: [
+                    "text-color",
+                    "font-color",
+                    "text-style",
+                    "color",
+                ],
+                correct: 3,
+            },
+            {
+                question: "Which CSS property controls the text size?",
+                options: [
+                    "font-size",
+                    "text-size",
+                    "font-style",
+                    "text-style",
+                ],
+                correct: 0,
+            },
+            {
+                question: "How do you display hyperlinks without an underline?",
+                options: [
+                    "a {underline: none;}",
+                    "a {text-decoration: none;}",
+                    "a {text-decoration: no-underline;}",
+                    "a {decoration: no-underline;}",
+                ],
+                correct: 1,
+            },
+            {
+                question: "How do you make each word in a text start with a capital letter?",
+                options: [
+                    "text-transform: capitalize",
+                    "text-transform: uppercase",
+                    "text-transform: lowercase",
+                    "text-transform: capitalize-first",
+                ],
+                correct: 0,
+            },
+            {
+                question: "Which property is used to change the font of an element?",
+                options: [
+                    "font-style",
+                    "font-weight",
+                    "font-size",
+                    "font-family",
+                ],
+                correct: 3,
+            },
+            {
+                question: "How do you make the text bold?",
+                options: [
+                    "font-style: bold;",
+                    "font-weight: bold;",
+                    "font-bold: true;",
+                    "text-weight: bold;",
+                ],
+                correct: 1,
+            },
+            {
+                question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+                options: [
+                    "alt",
+                    "title",
+                    "src",
+                    "longdesc",
+                ],
+                correct: 0,
+            },
+            {
+                question: "Which HTML element is used to specify a footer for a document or section?",
+                options: [
+                    "<bottom>",
+                    "<section>",
+                    "<footer>",
+                    "<footer>",
+                ],
+                correct: 2,
+            },
+            {
+                question: "In HTML, which attribute is used to specify that an input field must be filled out?",
+                options: [
+                    "placeholder",
+                    "value",
+                    "required",
+                    "validate",
+                ],
+                correct: 2,
+            },
+            {
+                question: "Which input type defines a slider control?",
+                options: [
+                    "slider",
+                    "controls",
+                    "sliding",
+                    "range",
+                ],
+                correct: 3,
+            },
+            {
+                question: "Which HTML element is used to specify a header for a document or section?",
+                options: [
+                    "<head>",
+                    "<header>",
+                    "<top>",
+                    "<section>",
+                ],
+                correct: 1,
+            },
+            {
+                question: "What is the correct syntax for referring to an external script called 'script.js'?",
+                options: [
+                    "<script href='script.js'>",
+                    "<script ref='script.js'>",
+                    "<script src='script.js'>",
+                    "<script name='script.js'>",
+                ],
+                correct: 2,
+            },
+        ];
+
+        // Your quizData here
+
+        // Generate 10 random indices to select questions
+        const indices = Array.from({ length: 10 }, (_, i) => i);
+        indices.sort(() => Math.random() - 0.5);
+        const selectedQuestions = indices.slice(0, 10);
+
+        // Define levels for each question
+        const levelMapping = [];
+        for (let i = 0; i < 10; i++) {
+            if (i < 5) {
+                levelMapping.push(1);
+            } else if (i < 8) {
+                levelMapping.push(2);
+            } else {
+                levelMapping.push(3);
+            }
+        }
+
+        // Initialize variables
+        let currentQuiz = 0;
+        let score = 0;
+
+        // DOM elements
+        const questionEle = document.getElementById('question');
+        const option_1 = document.getElementById('option_1');
+        const option_2 = document.getElementById('option_2');
+        const option_3 = document.getElementById('option_3');
+        const option_4 = document.getElementById('option_4');
+        const answerEls = document.querySelectorAll('.answer');
+        const submitBtn = document.getElementById('submit');
+        const scoreDisplay = document.getElementById('score');
+        const levelDisplay = document.getElementById('level');
+
+        function loadQuiz() {
+            // Deselect all radio buttons
+            answerEls.forEach(answerEl => answerEl.checked = false);
+
+            const index = selectedQuestions[currentQuiz];
+            const currentQuizData = quizData[index];
+            questionEle.textContent = currentQuizData.question;
+            option_1.textContent = currentQuizData.options[0];
+            option_2.textContent = currentQuizData.options[1];
+            option_3.textContent = currentQuizData.options[2];
+            option_4.textContent = currentQuizData.options[3];
+
+            levelDisplay.textContent = `Level ${levelMapping[currentQuiz]}`;
+            scoreDisplay.textContent = score;
+        }
+
+
+        function deselectAnswers() {
+            answerEls.forEach(answerEl => answerEl.checked = false);
+        }
+
+        function getSelected() {
+            let selectedAnswer;
+            answerEls.forEach(answerEl => {
+                if (answerEl.checked) {
+                    selectedAnswer = answerEl.id;
+                }
+            });
+            return selectedAnswer;
+        }
+
+        function checkAns() {
+            const answer = getSelected();
+            if (answer) {
+                if (answer === 'a' && quizData[selectedQuestions[currentQuiz]].correct === 0 ||
+                    answer === 'b' && quizData[selectedQuestions[currentQuiz]].correct === 1 ||
+                    answer === 'c' && quizData[selectedQuestions[currentQuiz]].correct === 2 ||
+                    answer === 'd' && quizData[selectedQuestions[currentQuiz]].correct === 3) {
+                    score += 10;
+                }
+
+                // Increment the currentQuiz
+                currentQuiz++;
+                if (currentQuiz < 10) {
+                    loadQuiz();
+                } else {
+                    alert(`You finished! Your score is ${score}%`);
+                    // Reset the quiz or take other actions
+                    currentQuiz = 0;
+                    score = 0;
+                    loadQuiz();
+                }
+            } else {
+                // Display an alert message with the question number
+                alert(`Please select an answer for question ${currentQuiz + 1}`);
+            }
+        }
+
+        function playAgain() {
+            // Reset variables or perform any other actions needed to start the quiz again
+            currentQuiz = 0;
+            score = 0;
+
+            // Load the quiz again
+            loadQuiz();
+        }
+
+        loadQuiz();
+
+    </script>
+
+</body>
+
+</html>
